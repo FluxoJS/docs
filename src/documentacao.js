@@ -34,6 +34,7 @@ const ESCALA = {
   tituloPrincipal: 36,
   tituloSecao: 28,
   tituloBloco: 22,
+  passoSecao: 22,
   corpo: 16,
   lista: 16,
   codigo: 14,
@@ -46,6 +47,12 @@ const tituloSecao = (conteudo) =>
     .cor("azul marinho")
     .margemVertical(22)
     .sublinhado();
+
+const passoSecao = (txt) =>
+  h3(txt)
+    .tamanho(ESCALA.passoSecao)
+    .cor("azul marinho")
+    .margemVertical(22);
 
 const paragrafo = (conteudo, onde) =>
   texto(conteudo, onde)
@@ -261,7 +268,7 @@ caixaApostila(
   "Você precisa do Node.js (recomendado versão LTS). Ele permite instalar ferramentas como o Vite e o pacote da Fluxo."
 );
 
-h3("Passo 1 — Instalar o Node.js");
+passoSecao("Passo 1 — Instalar o Node.js");
 
 paragrafo(
   "Acesse o site oficial do Node.js, baixe a versão LTS e instale normalmente. Depois disso, abra o terminal e verifique se deu certo:"
@@ -278,7 +285,7 @@ paragrafo(
   "Se aparecerem números de versão, está tudo pronto para continuar."
 );
 
-h3("Passo 2 — Criar um projeto com Vite");
+passoSecao("Passo 2 — Criar um projeto com Vite");
 
 paragrafo(
   "Agora vamos criar um projeto simples usando o Vite, que é um servidor leve para rodar seu código no navegador."
@@ -310,7 +317,7 @@ cardPadrao(
   "normal"
 );
 
-h3("Passo 3 — Criar o HTML base");
+passoSecao("Passo 3 — Criar o HTML base");
 
 paragrafo(
   "Na raiz do projeto, você pode usar um index.html extremamente simples. A Fluxo vai cuidar do resto."
@@ -327,7 +334,7 @@ paragrafo(
   "Esse arquivo apenas aponta para o seu JavaScript principal."
 );
 
-h3("Passo 4 — Criar seu arquivo JS");
+passoSecao("Passo 4 — Criar seu arquivo JS");
 
 paragrafo(
   "Dentro da pasta src/, crie um arquivo com o nome que quiser. Por exemplo:"
@@ -343,7 +350,7 @@ paragrafo(
   "É nesse arquivo que você vai escrever usando a Fluxo."
 );
 
-h3("Passo 5 — Instalar a Fluxo");
+passoSecao("Passo 5 — Instalar a Fluxo");
 
 paragrafo(
   "Agora instale a engine Fluxo no seu projeto:"
@@ -359,7 +366,7 @@ paragrafo(
   "Depois disso, você já pode importar e começar a usar normalmente."
 );
 
-h3("Passo 6 — Rodar o projeto");
+passoSecao("Passo 6 — Rodar o projeto");
 
 paragrafo(
   "Para ver sua página funcionando, execute:"
