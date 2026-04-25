@@ -366,7 +366,7 @@ paragrafo(
 );
 
 cardPadrao(
-  blocoCodigo(`npx vite`),
+  blocoCodigo(`npm run dev`),
   "codigo",
   "normal"
 );
