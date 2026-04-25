@@ -184,6 +184,10 @@ tituloSecao("Sumário da apostila");
 
 const indice = cardPadrao(linha(), "sumario", "conforto");
 
+link("Unidade 0 • Instalação", "#instalacao", indice)
+  .cor("azul marinho")
+  .negrito();
+
 link("Unidade 1 • Ideia principal", "#ideia-principal", indice)
   .cor("azul marinho")
   .negrito();
@@ -243,6 +247,141 @@ link("Unidade 14 • Bastidores do codigo.js", "#bastidores-codigo-js", indice)
 caixaApostila(
   "Roteiro sugerido de estudo",
   "Sessão 1 (25 min): unidades 1 a 4. Sessão 2 (25 min): unidades 5 a 8. Sessão 3 (20 min): unidades 9 a 13 + revisão."
+);
+
+
+definirId(tituloSecao("Unidade 0 — Instalação"), "instalacao");
+
+paragrafo(
+  "Antes de começar a usar a Fluxo, você precisa preparar um ambiente simples com Node.js e Vite."
+);
+
+caixaApostila(
+  "O que você precisa ter instalado",
+  "Você precisa do Node.js (recomendado versão LTS). Ele permite instalar ferramentas como o Vite e o pacote da Fluxo."
+);
+
+h3("Passo 1 — Instalar o Node.js");
+
+paragrafo(
+  "Acesse o site oficial do Node.js, baixe a versão LTS e instale normalmente. Depois disso, abra o terminal e verifique se deu certo:"
+);
+
+cardPadrao(
+  blocoCodigo(`node -v
+npm -v`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Se aparecerem números de versão, está tudo pronto para continuar."
+);
+
+h3("Passo 2 — Criar um projeto com Vite");
+
+paragrafo(
+  "Agora vamos criar um projeto simples usando o Vite, que é um servidor leve para rodar seu código no navegador."
+);
+
+cardPadrao(
+  blocoCodigo(`npm create vite@latest meu-projeto`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Escolha a opção 'Vanilla' (JavaScript puro). Depois entre na pasta:"
+);
+
+cardPadrao(
+  blocoCodigo(`cd meu-projeto`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Instale as dependências:"
+);
+
+cardPadrao(
+  blocoCodigo(`npm install`),
+  "codigo",
+  "normal"
+);
+
+h3("Passo 3 — Criar o HTML base");
+
+paragrafo(
+  "Na raiz do projeto, você pode usar um index.html extremamente simples. A Fluxo vai cuidar do resto."
+);
+
+cardPadrao(
+  blocoCodigo(`<!DOCTYPE html>
+<script type="module" src="./src/documentacao.js"></script>`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Esse arquivo apenas aponta para o seu JavaScript principal."
+);
+
+h3("Passo 4 — Criar seu arquivo JS");
+
+paragrafo(
+  "Dentro da pasta src/, crie um arquivo com o nome que quiser. Por exemplo:"
+);
+
+cardPadrao(
+  blocoCodigo(`src/documentacao.js`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "É nesse arquivo que você vai escrever usando a Fluxo."
+);
+
+h3("Passo 5 — Instalar a Fluxo");
+
+paragrafo(
+  "Agora instale a engine Fluxo no seu projeto:"
+);
+
+cardPadrao(
+  blocoCodigo(`npm install @fluxojs/engine`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Depois disso, você já pode importar e começar a usar normalmente."
+);
+
+h3("Passo 6 — Rodar o projeto");
+
+paragrafo(
+  "Para ver sua página funcionando, execute:"
+);
+
+cardPadrao(
+  blocoCodigo(`npx vite`),
+  "codigo",
+  "normal"
+);
+
+paragrafo(
+  "Abra o navegador no endereço mostrado (geralmente http://localhost:5173)."
+);
+
+destaque(
+  "Se tudo estiver certo, qualquer código que você escrever no arquivo JS já vai aparecer na tela automaticamente."
+);
+
+caixaApostila(
+  "Tarefa rápida da Unidade 0",
+  "Crie o projeto, rode o servidor e faça um teste simples importando titulo() e texto(). Se aparecer no navegador, você já está pronto para a próxima unidade."
 );
 
 definirId(tituloSecao("Unidade 1 — A ideia principal"), "ideia-principal");
@@ -882,7 +1021,7 @@ cardLista(listaOrdenada([
 ])
   .tamanho(ESCALA.lista), "normal");
 
-cardPadrao(blocoCodigo(`import { titulo, texto, botao, modo, responsivo } from "./engine/engine.js"
+cardPadrao(blocoCodigo(`import { titulo, texto, botao, modo, responsivo } from "@fluxojs/engine"
 
 modo("claro")
 responsivo()
