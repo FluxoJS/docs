@@ -251,9 +251,13 @@ link("Unidade 14 • Bastidores do codigo.js", "#bastidores-codigo-js", indice)
   .cor("azul marinho")
   .negrito();
 
+link("Unidade 15 • Referência de nomes", "#referencia-de-nomes", indice)
+  .cor("azul marinho")
+  .negrito();
+
 caixaApostila(
   "Roteiro sugerido de estudo",
-  "Sessão 1 (25 min): unidades 1 a 4. Sessão 2 (25 min): unidades 5 a 8. Sessão 3 (20 min): unidades 9 a 13 + revisão."
+  "Sessão 1 (25 min): unidades 1 a 4. Sessão 2 (25 min): unidades 5 a 8. Sessão 3 (20 min): unidades 9 a 13 + revisão. Sessão 4 (10 min): unidade 15 como consulta rápida de nomes."
 );
 
 
@@ -827,6 +831,7 @@ cardPadrao(blocoCodigo(`texto("Aprendendo com calma")
 
 cardLista(lista([
   "cor(...) muda a cor do texto.",
+  "fonte(...) define a família tipográfica do elemento.",
   "tamanho(...) aumenta ou diminui o tamanho.",
   "negrito() deixa o texto forte.",
   "italico() inclina o texto.",
@@ -837,10 +842,17 @@ cardLista(lista([
   "fundo(...) muda a cor de fundo.",
   "largura(...) define o espaço ocupado.",
   "margem(...), margemVertical(...) e margemHorizontal(...) ajustam o espaço externo.",
-  "espacamento(...), espacamentoVertical(...) e espacamentoHorizontal(...) ajustam o espaço interno.",
-  "paddingVertical(...) e paddingHorizontal(...) são atalhos de espaçamento interno."
+  "espacamento(...), espacamentoVertical(...) e espacamentoHorizontal(...) ajustam o espaço interno."
 ])
   .tamanho(16), "normal");
+
+paragrafo(
+  "Além dos métodos encadeáveis, existem funções avulsas com nomes alternativos para padding: paddingVertical(...) e paddingHorizontal(...). Elas funcionam como atalhos de espacamentoVertical(...) e espacamentoHorizontal(...), mas são chamadas separadamente, não encadeadas."
+)
+  .tamanho(ESCALA.pequeno)
+  .cor("cinza escuro")
+  .italico()
+  .margemVertical(6);
 
 definirId(tituloSecao("Unidade 6 — Listas sem mistério"), "listas-sem-misterio");
 
@@ -1192,9 +1204,114 @@ caixaApostila(
   "Você consegue: criar títulos, textos, listas, botões, links, controlar layout com largura/margem/padding e preparar o projeto para celular com responsivo()."
 );
 
+definirId(tituloSecao("Unidade 15 — Referência de nomes"), "referencia-de-nomes");
+
+paragrafo(
+  "A Fluxo aceita nomes amigáveis em português para cores, fontes e alinhamentos. Esta unidade lista todos os valores disponíveis para facilitar a consulta durante o desenvolvimento."
+);
+
+passoSecao("Nomes de cores disponíveis");
+
+paragrafo(
+  "Use esses nomes nas funções cor(...) e fundo(...). Se o nome tiver espaço, você pode escrever com ou sem espaço — a Fluxo normaliza automaticamente."
+);
+
+cardLista(
+  lista([
+    "preto — black",
+    "branco — white",
+    "cinza — gray",
+    "cinza claro — lightgray",
+    "azul — blue",
+    "azul claro — lightblue",
+    "azul escuro — darkblue",
+    "azul marinho — navy",
+    "verde — green",
+    "verde claro — lightgreen",
+    "verde escuro — darkgreen",
+    "verde limao — lime",
+    "vermelho — red",
+    "vermelho escuro — darkred",
+    "rosa — pink",
+    "rosa choque — deeppink",
+    "amarelo — yellow",
+    "ouro — gold",
+    "laranja — orange",
+    "roxo — purple",
+    "marrom — brown",
+    "bege — beige",
+    "ciano — cyan",
+    "transparente — transparent"
+  ]).tamanho(ESCALA.lista),
+  "normal"
+);
+
+cardPadrao(
+  blocoCodigo(`titulo("Meu projeto")
+  .cor("azul marinho")
+
+fundo("bege")
+texto("Destaque").cor("verde escuro")`),
+  "codigo",
+  "normal"
+);
+
+passoSecao("Nomes de fontes disponíveis");
+
+paragrafo(
+  "Use esses nomes na função fonte(...) chamada de forma avulsa ou encadeada. Você também pode passar qualquer valor CSS válido de font-family."
+);
+
+cardLista(
+  lista([
+    "sistema — fonte padrão do sistema operacional (system-ui, -apple-system, Segoe UI, etc.)",
+    "serifa — fonte com serifa clássica (Georgia, serif)",
+    "semserifa — fonte sem serifa limpa (Arial, sans-serif)",
+    "maquina — fonte monoespaçada de código ('Courier New', monospace)",
+    "cursiva — fonte manuscrita decorativa ('Brush Script MT', cursive)"
+  ]).tamanho(ESCALA.lista),
+  "normal"
+);
+
+cardPadrao(
+  blocoCodigo(`fonte("serifa")
+fonte("maquina", bloco)
+texto("Código").fonte("maquina")`),
+  "codigo",
+  "normal"
+);
+
+passoSecao("Nomes de alinhamento disponíveis");
+
+paragrafo(
+  "Use esses nomes na função encadeável alinhar(...). O valor é normalizado automaticamente, então espaços e maiúsculas não importam."
+);
+
+cardLista(
+  lista([
+    "esquerda — alinha à esquerda (left)",
+    "direita — alinha à direita (right)",
+    "centro — centraliza (center)",
+    "centralizado — mesmo efeito que centro (center)",
+    "justificado — distribui o texto nas margens (justify)"
+  ]).tamanho(ESCALA.lista),
+  "normal"
+);
+
+cardPadrao(
+  blocoCodigo(`titulo("Título").alinhar("centro")
+texto("Parágrafo longo").alinhar("justificado")`),
+  "codigo",
+  "normal"
+);
+
+caixaApostila(
+  "Dica de consulta",
+  "Guarde esta unidade como referência rápida. Sempre que não lembrar o nome de uma cor ou fonte, volte aqui antes de pesquisar em outro lugar."
+);
+
 paragrafo("Fim da apostila • Próximo passo: montar um mini projeto autoral com 3 seções e navegação por índice.")
   .alinhar("centro")
   .italico()
   .tamanho(ESCALA.pequeno)
   .margemVertical(20);
-
