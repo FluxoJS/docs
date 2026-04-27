@@ -1229,7 +1229,7 @@ cardLista(
     "verde — green",
     "verde claro — lightgreen",
     "verde escuro — darkgreen",
-    "verde limao — lime",
+    "verde limão — lime",
     "vermelho — red",
     "vermelho escuro — darkred",
     "rosa — pink",
@@ -1266,7 +1266,7 @@ cardLista(
   lista([
     "sistema — fonte padrão do sistema operacional (system-ui, -apple-system, Segoe UI, etc.)",
     "serifa — fonte com serifa clássica (Georgia, serif)",
-    "semserifa — fonte sem serifa limpa (Arial, sans-serif)",
+    "sem serifa — fonte sem serifa limpa (Arial, sans-serif)",
     "maquina — fonte monoespaçada de código ('Courier New', monospace)",
     "cursiva — fonte manuscrita decorativa ('Brush Script MT', cursive)"
   ]).tamanho(ESCALA.lista),
